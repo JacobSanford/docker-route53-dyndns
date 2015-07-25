@@ -1,5 +1,5 @@
 # jacobsanford/route53-dyndns
-Docker container : Provides a simple dynamic DNS creation and update service via Amazon Route53 and A (alias/subdomain) records.
+Docker container : Provides a simple dynamic DNS creation and update service via [Amazon Route53](http://aws.amazon.com/route53/) and A (alias/subdomain) records.
 
 ## Usage
 ```
