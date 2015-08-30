@@ -1,5 +1,5 @@
 # jacobsanford/route53-dyndns
-Docker container : Provides a simple dynamic DNS creation and update service via [Amazon Route53](http://aws.amazon.com/route53/) and A (alias/subdomain) records.
+Docker image : Provides a simple dynamic DNS creation and update service via [Amazon Route53](http://aws.amazon.com/route53/) and A (alias/subdomain) records.
 
 ## Usage
 ```
@@ -23,7 +23,7 @@ docker run --rm \
 * `ROUTE53_UPDATE_FREQUENCY` - The frequency (in seconds) to check for updates. Unless you have very specific needs, consider using a very large value here.
 
 ## License
-- Route53 Dynamic DNS is licensed under the MIT License:
+- Route53 Dynamic DNS Docker is licensed under the MIT License:
   - http://opensource.org/licenses/mit-license.html
 - Attribution is not required, but much appreciated:
-  - `Route53 Dynamic DNS by Jacob Sanford`
+  - `Route53 Dynamic DNS Docker by Jacob Sanford`
