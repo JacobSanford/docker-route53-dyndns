@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-if [ -n "$ROUTE53_UPDATE_FREQUENCY" ]; then ROUTE53_UPDATE_FREQUENCY=10800; fi
-
-/opt/route53-dyndns/r53dyndns.py -U $ROUTE53_IP_URL -R $ROUTE53_DOMAIN_A_RECORD
-sleep $ROUTE53_UPDATE_FREQUENCY

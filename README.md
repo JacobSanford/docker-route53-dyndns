@@ -1,4 +1,4 @@
-# jacobsanford/route53-dyndns
+# jacobsanford/route53-dyndns [![](https://badge.imagelayers.io/jacobsanford/route53-dyndns:latest.svg)](https://imagelayers.io/?images=jacobsanford/route53-dyndns:latest 'Get your own badge on imagelayers.io')
 Docker image : Provides a simple dynamic DNS creation and update service via [Amazon Route53](http://aws.amazon.com/route53/) and A (alias/subdomain) records.
 
 ## Usage

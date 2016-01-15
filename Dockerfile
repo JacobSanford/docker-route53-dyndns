@@ -1,15 +1,18 @@
-FROM phusion/baseimage
-MAINTAINER Jacob Sanford <jsanford_at_unb.ca>
+FROM gliderlabs/alpine:3.3
 
-# Use the phusion/baseimage init system
-CMD ["/sbin/my_init"]
+ENV ROUTE53_UPDATE_FREQUENCY 10800
 
-# Install Route53
-RUN apt-get update && apt-get install -y git python python-pip && apt-get clean
-RUN git clone git://github.com/JacobSanford/route-53-dyndns.git route53-dyndns
-RUN cd route53-dyndns; pip install -r requirements.txt
-RUN mv route53-dyndns /opt
+RUN apk add --update \
+    python \
+    py-pip \
+    openssl \
+  && rm -rf /var/cache/apk/*
 
-# Init system files
-ADD services/ /etc/service/
-RUN chmod -v +x /etc/service/*/run; chmod -v +x /etc/my_init.d/*.sh
+WORKDIR /app
+ADD run.sh /run.sh
+
+RUN wget http://github.com/JacobSanford/route-53-dyndns/archive/master.zip && \
+  unzip master.zip && mv route-53-dyndns-master/* . && \
+  pip install -r /app/requirements.txt
+
+CMD ["/run.sh"]
